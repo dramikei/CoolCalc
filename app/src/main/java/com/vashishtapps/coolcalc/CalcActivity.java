@@ -18,7 +18,7 @@ public class CalcActivity extends Activity {
     String leftValueStr = "";
     String rightValueStr = "";
     Operation currentOperation;
-    int result = 0;
+    long result = 0;
 
 
 
@@ -194,16 +194,16 @@ public class CalcActivity extends Activity {
                 switch(currentOperation) {
                     case ADD:
 
-                        result = Integer.parseInt(leftValueStr) + Integer.parseInt(rightValueStr);
+                        result = Long.parseLong(leftValueStr) + Long.parseLong(rightValueStr);
                         break;
                     case SUBTRACT:
-                        result = Integer.parseInt(leftValueStr) - Integer.parseInt(rightValueStr);
+                        result = Long.parseLong(leftValueStr) - Long.parseLong(rightValueStr);
                         break;
                     case MULTIPLY:
-                        result = Integer.parseInt(leftValueStr) * Integer.parseInt(rightValueStr);
+                        result = Long.parseLong(leftValueStr) * Long.parseLong(rightValueStr);
                         break;
                     case DIVIDE:
-                        result = Integer.parseInt(leftValueStr) / Integer.parseInt(rightValueStr);
+                        result = Long.parseLong(leftValueStr) / Long.parseLong(rightValueStr);
                         break;
 
                 }
@@ -224,7 +224,7 @@ public class CalcActivity extends Activity {
 
     }
 
-    void numberPressed(int number) {
+    void numberPressed(long number) {
         runningNumber += String.valueOf(number);
         resultView.setText(runningNumber);
     }
