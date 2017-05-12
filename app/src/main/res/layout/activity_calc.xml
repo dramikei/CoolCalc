@@ -21,7 +21,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/resultsText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
@@ -39,7 +39,7 @@
             android:weightSum="4">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/sevenBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -49,7 +49,7 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/eightBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -59,7 +59,7 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/nineBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -69,7 +69,7 @@
                 android:textSize="30sp" />
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/divideBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -84,7 +84,7 @@
             android:weightSum="4">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/fourBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -94,7 +94,7 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/fiveBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -104,7 +104,7 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/sixBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -114,7 +114,7 @@
                 android:textSize="30sp" />
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/multiplyBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -129,7 +129,7 @@
             android:weightSum="4">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/oneBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -139,7 +139,7 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/twoBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -149,7 +149,7 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/threeBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -159,7 +159,7 @@
                 android:textSize="30sp" />
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/subtractBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -173,7 +173,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/clearBtn"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
@@ -184,7 +184,7 @@
                 android:textSize="24sp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/zeroBtn"
                 android:layout_width="95dp"
                 android:layout_height="fill_parent"
                 android:background="@android:color/transparent"
@@ -193,7 +193,7 @@
                 android:textSize="30sp" />
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/addBtn"
                 android:layout_width="96dp"
                 android:layout_height="fill_parent"
                 android:background="@color/trans"
@@ -203,7 +203,7 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/calcBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
