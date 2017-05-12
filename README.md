@@ -14,11 +14,14 @@ Case 2:
 If you press another operator, the app executes the previous operation(if any) and displays the result and stores it in the very first variable(leftValueStr) and when you enter a new number it stores it in the 2nd variable(rightValStr) and performs the operation if Equals is pressed or does same thing(Case 2) all over again if any other Operator is Pressed.
 
 # Bugs/Flaws
+
+/------- Fixed ----------/
 1) The App stores the numbers in Integer form and thus will crash if a number more than the max value of Int32 is used for any operation.
 max possible value of Int32 is - 2 147 483 647 (10 Digits)
 
 
-Easiest Fix - Try changing Integers to Floats in the code. but by doing so you will be left with ".0" after everytime operation which can be removed by some formatting.
+Easiest Fix - Try changing Integers to 64 Bit Integers in the code.
+/------- Fixed ----------/
 
 
 2) UI doesnt fill the whole space on the phone..
