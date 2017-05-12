@@ -8,6 +8,19 @@ import android.widget.TextView;
 import android.view.View;
 
 public class CalcActivity extends Activity {
+    TextView resultView;
+
+    public enum Operation {
+        ADD, SUBTRACT, DIVIDE, MULTIPLY, EQUAL
+    }
+
+    String runningNumber = "";
+    String leftValueStr = "";
+    String rightValueStr = "";
+    Operation currentOperation;
+    int result = 0;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +45,13 @@ public class CalcActivity extends Activity {
 
         Button clearBtn = (Button) findViewById(R.id.clearBtn);
 
-        TextView resultView = (TextView) findViewById(R.id.resultsText);
 
+        resultView = (TextView) findViewById(R.id.resultsText);
+        resultView.setText("");
         oneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                numberPressed(1);
 
 
             }
@@ -45,6 +60,7 @@ public class CalcActivity extends Activity {
         twoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                numberPressed(2);
 
 
             }
@@ -53,7 +69,7 @@ public class CalcActivity extends Activity {
         threeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                numberPressed(3);
 
             }
         });
@@ -61,7 +77,7 @@ public class CalcActivity extends Activity {
         fourBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                numberPressed(4);
 
             }
         });
@@ -69,7 +85,7 @@ public class CalcActivity extends Activity {
         fiveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                numberPressed(5);
 
             }
         });
@@ -77,7 +93,7 @@ public class CalcActivity extends Activity {
         sixBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                numberPressed(6);
 
             }
         });
@@ -85,7 +101,7 @@ public class CalcActivity extends Activity {
         sevenBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                numberPressed(7);
 
             }
         });
@@ -93,7 +109,7 @@ public class CalcActivity extends Activity {
         eightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                numberPressed(8);
 
             }
         });
@@ -101,7 +117,7 @@ public class CalcActivity extends Activity {
         nineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                numberPressed(9);
 
             }
         });
@@ -109,7 +125,7 @@ public class CalcActivity extends Activity {
         zeroBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                numberPressed(0);
 
             }
         });
@@ -117,7 +133,7 @@ public class CalcActivity extends Activity {
         divideBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                processOperation(Operation.DIVIDE);
 
             }
         });
@@ -125,7 +141,7 @@ public class CalcActivity extends Activity {
         multiplyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                processOperation(Operation.MULTIPLY);
 
             }
         });
@@ -133,7 +149,7 @@ public class CalcActivity extends Activity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                processOperation(Operation.ADD);
 
             }
         });
@@ -141,7 +157,7 @@ public class CalcActivity extends Activity {
         subtractBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                processOperation(Operation.SUBTRACT);
 
             }
         });
@@ -149,7 +165,12 @@ public class CalcActivity extends Activity {
         clearBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                runningNumber = "";
+                leftValueStr = "";
+                rightValueStr = "";
+                result = 0;
+                resultView.setText("");
+                currentOperation = null;
 
             }
         });
@@ -157,9 +178,55 @@ public class CalcActivity extends Activity {
         calcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                processOperation(Operation.EQUAL);
 
             }
         });
     }
+
+    void processOperation(Operation operation) {
+        if (currentOperation != null) {
+
+            if (runningNumber != "") {
+                rightValueStr = runningNumber;
+                runningNumber = "";
+
+                switch(currentOperation) {
+                    case ADD:
+
+                        result = Integer.parseInt(leftValueStr) + Integer.parseInt(rightValueStr);
+                        break;
+                    case SUBTRACT:
+                        result = Integer.parseInt(leftValueStr) - Integer.parseInt(rightValueStr);
+                        break;
+                    case MULTIPLY:
+                        result = Integer.parseInt(leftValueStr) * Integer.parseInt(rightValueStr);
+                        break;
+                    case DIVIDE:
+                        result = Integer.parseInt(leftValueStr) / Integer.parseInt(rightValueStr);
+                        break;
+
+                }
+
+                leftValueStr = String.valueOf(result);
+                resultView.setText(leftValueStr);
+            }
+
+
+        } else {
+
+            leftValueStr = runningNumber;
+            runningNumber = "";
+
+
+        }
+        currentOperation = operation;
+
+    }
+
+    void numberPressed(int number) {
+        runningNumber += String.valueOf(number);
+        resultView.setText(runningNumber);
+    }
+
 }
